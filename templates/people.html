@@ -13,13 +13,19 @@
     <form class="col-lg-6 offset-lg-3 " action="{{ url_for('users') }}" method="post">
     <div class="row pb-4">
     <div class="col-12">
-        <input class="form-control mr-sm-2" id="search" name="search" type="search" placeholder="Search by room" aria-label="Search" id="searchbox">
+        <input class="form-control mr-sm-2" id="search" name="search" type="search" placeholder="Search by grades" aria-label="Search" id="searchbox">
     </div>
     <div class="col-6">
-        <input class="form-control mr-sm-2" id="rangefrom" name="rangefrom" type="search" placeholder="Teln range from" aria-label="Search" id="searchbox">
+        <input class="form-control mr-sm-2" id="rangefrom" name="rangefrom" type="number" placeholder="Grade range from" aria-label="Search" id="searchbox">
     </div>
     <div class="col-6">
-        <input class="form-control mr-sm-2" id="rangeto" name="rangeto" type="search" placeholder="Teln range to" aria-label="Search" id="searchbox">
+        <input class="form-control mr-sm-2" id="rangeto" name="rangeto" type="number" placeholder="Grade range to" aria-label="Search" id="searchbox">
+    </div>
+    <div class="col-6">
+        <input class="form-control mr-sm-2" id="idrangefrom" name="idrangefrom" type="number" placeholder="Id range from" aria-label="Search" id="searchbox">
+    </div>
+    <div class="col-6">
+        <input class="form-control mr-sm-2" id="idrangeto" name="idrangeto" type="number" placeholder="Id range to" aria-label="Search" id="searchbox">
     </div>
 </div>
 <button type="submit" class="btn btn-primary">Search</button></br>
@@ -42,9 +48,9 @@
         <a class="close pull-right" href="/deleterecord/{{person['id']}}"><img src="/static/img/trash-fill.svg"> </a>
         <a class="close pull-right" href="/updaterecord/{{person['id']}}"><img src="/static/img/pencil-fill.svg"> </a>
     </h4>
-    <h5 class="card-subtitle mb-2 text-muted"><b>Room - </b>{{person['room']}}</h5>
-      <h6 class="card-subtitle mb-2 text-muted"><b>Teln - </b>{{person['teln']}}</h6>
-    <p class="card-text">{{person['descript']}}</p>
+    <h5 class="card-subtitle mb-2 text-muted"><b>Id - </b>{{person['s_id']}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted"><b>Grade - </b>{{person['grade']}}</h6>
+    <p class="card-text">{{person['notes']}}</p>
   </div></div></div>
           {% endfor %}
       </div>
